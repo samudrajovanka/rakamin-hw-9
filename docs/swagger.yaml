@@ -129,6 +129,19 @@ paths:
       summary: Get all movies
       security:
         - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: string
+          description: default 1
+          example: 1
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: default 10
+          example: 10
       responses:
         '200':
           description: Successful response
@@ -180,6 +193,19 @@ paths:
       summary: Get all users
       security:
         - bearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: string
+          description: default 1
+          example: 1
+        - name: limit
+          in: query
+          schema:
+            type: string
+          description: default 10
+          example: 10
       responses:
         '200':
           description: Successful response
