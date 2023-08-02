@@ -1,0 +1,41 @@
+{
+  "name": "week9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "start:dev": "nodemon ./src/server.js"
+  },
+  "keywords": [],
+  "author": "Jovanka Samudra",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.1.0",
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.1",
+    "module-alias": "^2.2.3",
+    "morgan": "^1.10.0",
+    "prisma": "^5.1.0",
+    "swagger-ui-express": "^5.0.0",
+    "yaml": "^2.3.1"
+  },
+  "_moduleAliases": {
+    "@/src": "./src",
+    "@/config": "./src/config",
+    "@/controllers": "./src/api/controllers",
+    "@/routes": "./src/api/routes",
+    "@/middlewares": "./src/api/middlewares",
+    "@/services": "./src/services",
+    "@/utils": "./src/utils",
+    "@/constants": "./src/constants",
+    "@/exceptions": "./src/exceptions",
+    "@/validations": "./src/validations"
+  }
+}
