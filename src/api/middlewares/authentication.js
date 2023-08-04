@@ -20,6 +20,10 @@ const authentication = async (req, res, next) => {
     const userService = new UserService();
     const user = await userService.getUserById(id);
 
+    if (!user) {
+      throw new AuthenticationError();
+    }
+
     req.user = user;
     next();
   } catch (error) {

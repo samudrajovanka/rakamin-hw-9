@@ -6,3 +6,4 @@ exports.INVARIANT_ERR_MSG = 'Invariant error';
 exports.NOT_FOUND_ERR_MSG = 'Not found error';
 exports.TOKEN_INVALID_ERR_MSG = 'Token invalid';
 exports.TOKEN_EXPIRED_ERR_MSG = 'Token expired';
+exports.EMAIL_ALREADY_USED_ERR_MSG = 'Email already used';
