@@ -2,10 +2,13 @@ const router = require('express').Router();
 
 const userController = require('@/controllers/user.controller');
 const authentication = require('@/middlewares/authentication');
+const { authorization } = require('@/middlewares/authorization');
 
-router.get('/', authentication, userController.getUsers);
-router.get('/me', authentication, userController.getMe);
-router.put('/me', authentication, userController.updateMe);
-router.delete('/me', authentication, userController.deleteMe);
+router.use(authentication);
+
+router.get('/', authorization(['Engineer']), userController.getUsers);
+router.get('/me', userController.getMe);
+router.put('/me', userController.updateMe);
+router.delete('/me', userController.deleteMe);
 
 module.exports = router;
