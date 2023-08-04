@@ -16,8 +16,8 @@ const swaggerUiOptions = {
 };
 const file  = fs.readFileSync(path.join(__dirname, '..', '/docs/swagger.yaml'), 'utf8')
 const swaggerDocument = YAML.parse(file)
-router.use('/documentations', swaggerUi.serve);
-router.get('/documentations', swaggerUi.setup(swaggerDocument, swaggerUiOptions));
+router.use('/api-docs', swaggerUi.serve);
+router.get('/api-docs', swaggerUi.setup(swaggerDocument, swaggerUiOptions));
 
 /**
  * api routes

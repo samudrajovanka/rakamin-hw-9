@@ -2,14 +2,19 @@ const express = require('express');
 const morgan = require('morgan');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
 require('module-alias/register');
 require('dotenv').config();
-
 
 const { notFound, error } = require('@/middlewares/error');
 const routers = require('./routes');
 
 const app = express();
+
+/**
+ * cors
+ */
+app.use(cors());
 
 /**
  * express middleware
