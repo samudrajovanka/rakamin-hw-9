@@ -3,6 +3,7 @@ const { PrismaClient, Prisma } = require('@prisma/client');
 
 const { randomNumberId } = require('@/utils/common');
 const AuthenticationError = require('@/exceptions/AuthenticationError');
+const InvariantError = require('@/exceptions/InvariantError');
 const { createToken } = require('@/utils/tokenManager');
 const { EMAIL_ALREADY_USED_ERR_MSG } = require('@/constants/errorMessage');
 const { CONFLICT_ERR } = require('@/constants/errorType');
@@ -26,7 +27,10 @@ class AuthService {
         }
       });
 
-      return user;
+      const userWithourPassword = { ...user }
+      delete userWithourPassword.password;
+
+      return userWithourPassword;
     } catch (error) {
       if (error instanceof Prisma.PrismaClientKnownRequestError) {
         if (error.code === 'P2002') {
